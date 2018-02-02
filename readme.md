@@ -1,4 +1,4 @@
-# lambdifing: Lambda aws helper
+# lambdifying: Lambda aws helper
 
 
 # Invoke(name,Payload,LogType) -> Promise
@@ -19,7 +19,7 @@ $LATEST to Qualifier and Tail to LogType.
 ## Usage
 
 ```js
-const {invoke} = require('lambdifing')
+const {invoke} = require('lambdifying')
 
 invoke('lambdaName:prod:Event',{data:'is here'})
     .then((response) => {
