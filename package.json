@@ -1,6 +1,6 @@
 {
   "name": "lambdifying",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "module to  utils in lambda aws",
   "main": "index.js",
   "scripts": {
