@@ -16,6 +16,9 @@
     "invoke",
     "utils"
   ],
+  "bin": {
+    "lambdifying": "./bin/index.js"
+  },
   "author": "Jesus Cereceres",
   "license": "ISC",
   "bugs": {
@@ -23,7 +26,8 @@
   },
   "homepage": "https://github.com/big-math-solutions/node-lambda#readme",
   "dependencies": {
-    "aws-sdk": "^2.188.0"
+    "aws-sdk": "^2.188.0",
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "proxyquire": "^1.8.0"

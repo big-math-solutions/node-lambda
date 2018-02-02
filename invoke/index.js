@@ -11,7 +11,8 @@ const defaultInvocationType = 'RequestResponse';
 const defaultQualifier = '$LATEST';
 const defaultLogType = 'Tail';
 
-module.exports = (name, Payload = {}, LogType = defaultLogType) => {
+const invoke = module.exports = (name, Payload = {}, LogType = defaultLogType) => {
+    const client = invoke.client instanceof Lambda ? invoke.client : lambda;
     let Qualifier = null;
     let FunctionName = null;
     let InvocationType = null;
@@ -28,7 +29,7 @@ module.exports = (name, Payload = {}, LogType = defaultLogType) => {
     if (!FunctionName) return promiseRejectedBecauseNotName();
 
     if (!invocationTypeValids.has(InvocationType)) InvocationType = defaultInvocationType;
-    return lambda.invoke({
+    return client.invoke({
         FunctionName,
         Qualifier,
         InvocationType,
@@ -42,3 +43,5 @@ module.exports = (name, Payload = {}, LogType = defaultLogType) => {
             return parseBody(body);
         });
 };
+
+

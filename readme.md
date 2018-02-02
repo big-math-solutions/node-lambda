@@ -46,3 +46,31 @@ invoke('lambdaName',{data:'is here with RequestResponse as InvocationType and Qu
     })
 
 ```
+
+# Client
+
+Installing:
+
+```bash
+npm install -g lambdifying
+```
+
+Using:
+
+```bash
+lambdifying --help
+Options:
+  --version             Show version number                            [boolean]
+  --help                Show help                                      [boolean]
+  -i, --invoke          function to invoke in format:
+                        FunctionName:Qualifier:InvocationType
+                        FunctionName:Qualifier
+                        FunctionName:InvocationType
+                        FunctionName
+                                                                        [string]
+  -p, --payload         Payload to send                                 [string]
+  --pf, --payload-from  File from where get payload                     [string]
+  --lt, --logtype                                     [string] [default: "Tail"]
+```
+
+
