@@ -29,4 +29,20 @@ invoke('lambdaName:prod:Event',{data:'is here'})
         // error could be the error in request or LogResult if there is FunctionError
     })
 
+invoke('lambdaName:prod',{data:'is here with RequestResponse as InvocationType'})
+    .then((response) => {
+        // response is the Payload parsed
+    })
+    .catch(error => {
+        // error could be the error in request or LogResult if there is FunctionError
+    })
+
+invoke('lambdaName',{data:'is here with RequestResponse as InvocationType and Qualifier as $LATEST'})
+    .then((response) => {
+        // response is the Payload parsed
+    })
+    .catch(error => {
+        // error could be the error in request or LogResult if there is FunctionError
+    })
+
 ```
