@@ -1,5 +1,5 @@
 {
-  "name": "lambda-node",
+  "name": "lambdifing",
   "version": "0.0.1",
   "description": "module to  utils in lambda aws",
   "main": "index.js",
