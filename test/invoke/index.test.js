@@ -1,25 +1,7 @@
 const assert = require('assert');
 
 const proxyquire = require('proxyquire');
-const stub = (dataToAssert, ToReturn, errors = {}) => ({
-    'aws-sdk': {
-        Lambda: class {
-            invoke(data) {
-                const { error, FunctionError, LogResult } = errors;
-                assert.deepEqual(dataToAssert, data);
-                return {
-                    promise:() => error ?
-                        Promise.reject(error) :
-                        Promise.resolve({
-                            Payload:JSON.stringify(ToReturn),
-                            FunctionError,
-                            LogResult
-                        })
-                };
-            }
-        }
-    }
-});
+const { getStub: stub } = require('./feature');
 
 describe('test to invoke function', () => {
     it('should exec the invoke correctly', async() => {
