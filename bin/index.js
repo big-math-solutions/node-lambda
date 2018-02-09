@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const invokeHandler = require('./invoke-handler');
+const path = require('path');
 const {
     invoke:invokeName,
     payload,
@@ -19,9 +20,10 @@ const {
             FunctionName
     `)
     .default('logtype', 'Tail')
+    .default('payload-from', './')
     .string([ 'invoke', 'payload', 'logtype', 'payload-from' ])
     .help('help')
     .argv;
 
-if (invokeName) invokeHandler(invokeName, payload, payloadFrom, logtype);
+if (invokeName) invokeHandler(invokeName, payload, path.resolve(process.cwd(), payloadFrom), logtype);
 

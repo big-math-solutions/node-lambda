@@ -6,6 +6,7 @@ const readFile = promisify(fs.readFile);
 
 module.exports = (invokeName, payload, payloadFrom, logtype) => Promise.resolve()
     .then(() => {
+        console.log('payloadFrom ', payloadFrom);
         if (!payload && payloadFrom) return readFile(payloadFrom);
         return payload || '';
     })
